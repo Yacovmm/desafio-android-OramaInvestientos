@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -15,41 +15,49 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="13dp"
-            android:layout_marginStart="13dp"
+            android:layout_marginStart="5dp"
             android:layout_weight="2"
             android:text="Fundo orama Teste"
-            android:textSize="15sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            />
+            android:layout_marginLeft="5dp" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/fundoNameID"
-            android:layout_toEndOf="@+id/fundoNameID"
-            android:layout_toRightOf="@+id/fundoNameID"
+            android:layout_height="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="23dp"
+            android:layout_marginTop="7dp"
+            android:layout_toLeftOf="@+id/imageButton"
+            android:layout_toStartOf="@+id/imageButton"
             android:text="Valor Mínimo:"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="16dp" />
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/valorID"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/valorID"
             android:layout_width="79dp"
-            android:layout_height="22dp"
+            android:layout_height="15dp"
             android:layout_alignBottom="@+id/imageButton"
             android:layout_alignEnd="@+id/textView3"
             android:layout_alignRight="@+id/textView3"
             android:layout_below="@+id/textView3"
+            android:layout_marginBottom="7dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginTop="5dp"
             android:layout_weight="2"
             android:text="5000"
-            android:textSize="15sp"
+            android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="242dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <ImageButton
             android:id="@+id/imageButton"
@@ -57,15 +65,18 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/textView3"
-            android:layout_marginEnd="13dp"
-            android:layout_marginRight="13dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="7dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="7dp"
             android:layout_weight="1"
             android:background="@drawable/icone_hdpi"
             android:textSize="15sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="16dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="4dp" />
 
 
 
@@ -75,4 +86,4 @@
 
 
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
