@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.yacov.myoramafundsapp.R;
 import com.yacov.myoramafundsapp.model.Example;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
 
 /**
@@ -39,6 +41,16 @@ public class ExampleAdapter  extends RecyclerView.Adapter<ExampleAdapter.ViewHol
     public void onBindViewHolder(ExampleAdapter.ViewHolder holder, int position) {
         holder.name.setText(examples.get(position).getSimpleName());
         holder.valor.setText(examples.get(position).getOperability().getMinimumInitialApplicationAmount());
+
+        double profiMes = Double.parseDouble(
+                examples.get(position).getProfitabilities().getMonth() != null ? examples.get(position).getProfitabilities().getMonth() : "0");
+        double profiAno = Double.parseDouble(
+                examples.get(position).getProfitabilities().getM12() != null ? examples.get(position).getProfitabilities().getM12() : "0");
+        NumberFormat numberFormat = NumberFormat.getPercentInstance();
+        DecimalFormat decimalFormat = new DecimalFormat("##.##%");
+
+        holder.profitMes.setText(String.valueOf(decimalFormat.format(profiMes)));
+        holder.profitAno.setText(String.valueOf(decimalFormat.format(profiAno)));
     }
 
     @Override
@@ -48,12 +60,14 @@ public class ExampleAdapter  extends RecyclerView.Adapter<ExampleAdapter.ViewHol
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView name, valor;
+        private TextView name, valor, profitMes, profitAno;
 
         public ViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.fundoNameID);
             valor = itemView.findViewById(R.id.valorID);
+            profitMes = itemView.findViewById(R.id.profitMesID);
+            profitAno = itemView.findViewById(R.id.profitAnoID);
         }
     }
 }

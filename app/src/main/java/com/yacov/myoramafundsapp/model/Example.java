@@ -60,7 +60,9 @@ public class Example {
     @Expose
     private Description description;
 
-
+    @SerializedName("profitabilities")
+    @Expose
+    private Profitabilities profitabilities;
 
     @SerializedName("quota_date")
     @Expose
@@ -97,7 +99,7 @@ public class Example {
     public Example() {
     }
 
-    public Example(String initialDate, Operability operability, String fullName, Fees fees, Boolean isClosed, String simpleName, Object targetFund, Specification specification, String taxClassification, String cnpj, Description description, String quotaDate, Boolean isActive, String slug, String volatility12m, String netPatrimony12m, Boolean isClosedToCapture, FundManager fundManager) {
+    public Example(String initialDate, Operability operability, String fullName, Fees fees, Boolean isClosed, String simpleName, Object targetFund, Specification specification, String taxClassification, String cnpj, Description description, Profitabilities profitabilities, String quotaDate, Boolean isActive, String slug, String volatility12m, String netPatrimony12m, Boolean isClosedToCapture, FundManager fundManager) {
         this.initialDate = initialDate;
         this.operability = operability;
         this.fullName = fullName;
@@ -109,6 +111,7 @@ public class Example {
         this.taxClassification = taxClassification;
         this.cnpj = cnpj;
         this.description = description;
+        this.profitabilities = profitabilities;
         this.quotaDate = quotaDate;
         this.isActive = isActive;
         this.slug = slug;
@@ -116,6 +119,10 @@ public class Example {
         this.netPatrimony12m = netPatrimony12m;
         this.isClosedToCapture = isClosedToCapture;
         this.fundManager = fundManager;
+    }
+
+    public Profitabilities getProfitabilities() {
+        return profitabilities;
     }
 
     public String getInitialDate() {
