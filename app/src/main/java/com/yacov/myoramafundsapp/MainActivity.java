@@ -1,13 +1,13 @@
 package com.yacov.myoramafundsapp;
 
 import android.app.ProgressDialog;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.yacov.myoramafundsapp.adapter.ExampleAdapter;
@@ -15,6 +15,7 @@ import com.yacov.myoramafundsapp.api.Client;
 import com.yacov.myoramafundsapp.api.Service;
 import com.yacov.myoramafundsapp.model.Example;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -64,6 +65,21 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<List<Example>> call, Response<List<Example>> response) {
                     List<Example> examples = response.body();
+
+                    //TODO: Separar em listas os fundos pelas suas categorias;
+//                    List<Example> rendafixa = new ArrayList<>();
+//                    List<Example> acoes = new ArrayList<>();
+//                    List<Example> multimercado = new ArrayList<>();
+//                    for (Example j : examples){
+//                        if (j.getSpecification().getFundType().contains("Renda Fixa")){
+//                            rendafixa.add(j);
+//                        }else if (j.getSpecification().getFundType().contains("Multimercado")){
+//                            multimercado.add(j);
+//                        }else if (j.getSpecification().getFundType().contains("Ações")){
+//                            acoes.add(j);
+//                        }
+//                    }
+
                     recyclerView.setAdapter(new ExampleAdapter(examples, getApplicationContext()));
                     pd.hide();
                 }

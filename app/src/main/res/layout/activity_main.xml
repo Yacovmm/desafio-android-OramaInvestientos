@@ -49,7 +49,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:background="@drawable/orama"
-                    android:scaleType="centerCrop"
+                    android:scaleType="fitXY"
+                    android:fitsSystemWindows="true"
                     app:layout_scrollFlags="scroll|exitUntilCollapsed"
                     />
 

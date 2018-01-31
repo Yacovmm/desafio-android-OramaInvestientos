@@ -46,7 +46,6 @@ public class ExampleAdapter  extends RecyclerView.Adapter<ExampleAdapter.ViewHol
                 examples.get(position).getProfitabilities().getMonth() != null ? examples.get(position).getProfitabilities().getMonth() : "0");
         double profiAno = Double.parseDouble(
                 examples.get(position).getProfitabilities().getM12() != null ? examples.get(position).getProfitabilities().getM12() : "0");
-        NumberFormat numberFormat = NumberFormat.getPercentInstance();
         DecimalFormat decimalFormat = new DecimalFormat("##.##%");
 
         holder.profitMes.setText(String.valueOf(decimalFormat.format(profiMes)));
@@ -68,6 +67,14 @@ public class ExampleAdapter  extends RecyclerView.Adapter<ExampleAdapter.ViewHol
             valor = itemView.findViewById(R.id.valorID);
             profitMes = itemView.findViewById(R.id.profitMesID);
             profitAno = itemView.findViewById(R.id.profitAnoID);
+
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
         }
     }
 }
