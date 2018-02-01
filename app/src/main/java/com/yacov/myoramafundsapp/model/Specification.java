@@ -13,6 +13,9 @@ public class Specification {
 
 
 
+    @SerializedName("fund_suitability_profile")
+    @Expose
+    private FundSuitabilityProfile fundSuitabilityProfile;
     @SerializedName("is_qualified")
     @Expose
     private Boolean isQualified;
@@ -33,12 +36,21 @@ public class Specification {
     public Specification() {
     }
 
-    public Specification(Boolean isQualified, String fundType, String fundClass, FundMacroStrategy fundMacroStrategy, FundMainStrategy fundMainStrategy) {
+    public Specification(FundSuitabilityProfile fundSuitabilityProfile,Boolean isQualified, String fundType, String fundClass, FundMacroStrategy fundMacroStrategy, FundMainStrategy fundMainStrategy) {
+        this.fundSuitabilityProfile = fundSuitabilityProfile;
         this.isQualified = isQualified;
         this.fundType = fundType;
         this.fundClass = fundClass;
         this.fundMacroStrategy = fundMacroStrategy;
         this.fundMainStrategy = fundMainStrategy;
+    }
+
+    public FundSuitabilityProfile getFundSuitabilityProfile() {
+        return fundSuitabilityProfile;
+    }
+
+    public void setFundSuitabilityProfile(FundSuitabilityProfile fundSuitabilityProfile) {
+        this.fundSuitabilityProfile = fundSuitabilityProfile;
     }
 
     public Boolean getQualified() {

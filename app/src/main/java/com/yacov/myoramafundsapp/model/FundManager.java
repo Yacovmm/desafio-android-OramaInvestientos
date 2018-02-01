@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by YacovR on 28-Jan-18.
  */
 
-class FundManager {
+public class FundManager {
 
 
     @SerializedName("description")

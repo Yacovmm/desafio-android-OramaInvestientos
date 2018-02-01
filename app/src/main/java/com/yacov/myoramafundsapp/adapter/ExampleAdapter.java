@@ -44,6 +44,7 @@ public class ExampleAdapter  extends RecyclerView.Adapter<ExampleAdapter.ViewHol
     public void onBindViewHolder(ExampleAdapter.ViewHolder holder, int position) {
         holder.name.setText(examples.get(position).getSimpleName());
         holder.valor.setText(examples.get(position).getOperability().getMinimumInitialApplicationAmount());
+        //examples.get(position).getOperability().getMinimumInitialApplicationAmount())
 
         double profiMes = Double.parseDouble(
                 examples.get(position).getProfitabilities().getMonth() != null ? examples.get(position).getProfitabilities().getMonth() : "0");
@@ -87,6 +88,15 @@ public class ExampleAdapter  extends RecyclerView.Adapter<ExampleAdapter.ViewHol
                         intent.putExtra("AnoProfit", examples.get(position).getProfitabilities().getYear());
                         intent.putExtra("diaProfit", examples.get(position).getProfitabilities().getDay());
                         intent.putExtra("strategy", examples.get(position).getDescription().getStrategy());
+                        intent.putExtra("minimum_initial_application", examples.get(position).getOperability().getMinimumInitialApplicationAmount());
+                        intent.putExtra("minimum_subsequent_application", examples.get(position).getOperability().getMinimumSubsequentApplicationAmount());
+                        intent.putExtra("application_quotation", examples.get(position).getOperability().getApplicationQuotationDaysStr());
+                        intent.putExtra("application_time_limit", examples.get(position).getOperability().getApplicationTimeLimit());
+                        intent.putExtra("cnpj", examples.get(position).getCnpj());
+                        intent.putExtra("targetAudiance", examples.get(position).getDescription().getTargetAudience());
+                        intent.putExtra("fundManagerName", examples.get(position).getFundManager().getFullName());
+                        intent.putExtra("riskName", examples.get(position).getSpecification().getFundSuitabilityProfile().getName());
+                        intent.putExtra("intial_date", examples.get(position).getInitialDate());
 
                         context.startActivity(intent);
                     }
