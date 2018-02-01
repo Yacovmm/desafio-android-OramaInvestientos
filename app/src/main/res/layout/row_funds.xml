@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="5dp">
+    android:layout_marginBottom="5dp"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    >
 
 
         <TextView
@@ -33,7 +37,7 @@
             android:layout_marginTop="7dp"
             android:layout_toLeftOf="@+id/imageButton"
             android:layout_toStartOf="@+id/imageButton"
-            android:text="Valor Mínimo:"
+            android:text="Aplicação Mínima:"
             android:textSize="12sp"
             app:layout_constraintBottom_toTopOf="@+id/valorID"
             app:layout_constraintEnd_toStartOf="@+id/imageButton"
@@ -75,7 +79,8 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:clickable="true"/>
 
         <TextView
             android:id="@+id/textView"

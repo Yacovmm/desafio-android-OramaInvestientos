@@ -1,6 +1,8 @@
 package com.yacov.myoramafundsapp.adapter;
 
+import android.content.ClipData;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.yacov.myoramafundsapp.R;
+import com.yacov.myoramafundsapp.activity.DetailsActivity;
 import com.yacov.myoramafundsapp.model.Example;
 
 import java.text.DecimalFormat;
@@ -61,6 +64,8 @@ public class ExampleAdapter  extends RecyclerView.Adapter<ExampleAdapter.ViewHol
 
         private TextView name, valor, profitMes, profitAno;
 
+
+
         public ViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.fundoNameID);
@@ -72,6 +77,19 @@ public class ExampleAdapter  extends RecyclerView.Adapter<ExampleAdapter.ViewHol
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION){
+                        Example clickDataItem = examples.get(position);
+                        Intent intent = new Intent(context, DetailsActivity.class);
+                        intent.putExtra("complete_name", examples.get(position).getFullName());
+                        intent.putExtra("strengths", examples.get(position).getDescription().getStrengths());
+                        intent.putExtra("mesProfit", examples.get(position).getProfitabilities().getMonth());
+                        intent.putExtra("AnoProfit", examples.get(position).getProfitabilities().getYear());
+                        intent.putExtra("diaProfit", examples.get(position).getProfitabilities().getDay());
+                        intent.putExtra("strategy", examples.get(position).getDescription().getStrategy());
+
+                        context.startActivity(intent);
+                    }
 
                 }
             });

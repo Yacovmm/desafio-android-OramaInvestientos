@@ -1,4 +1,4 @@
-package com.yacov.myoramafundsapp;
+package com.yacov.myoramafundsapp.activity;
 
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.yacov.myoramafundsapp.R;
 import com.yacov.myoramafundsapp.adapter.ExampleAdapter;
 import com.yacov.myoramafundsapp.api.Client;
 import com.yacov.myoramafundsapp.api.Service;

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yacov.myoramafundsapp.activity.DetailsActivity"
+    android:orientation="vertical"
+    >
+
+
+
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".controller.MainActivity"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Conheça a estratégia do fundo"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColor="#4f996c"
+                    />
+
+                <TextView
+                    android:id="@+id/strategyID"
+                    android:layout_marginLeft="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fundo classificado como Renda Fixa Tesouro Selic, com objetivo de seguir a variação CDI. A carteira do Fundo é composta somente por títulos públicos pós-fixados (Tesouro Selic), ou seja, papéis da dívida do governo."
+                    android:textSize="15sp"
+                    android:layout_marginStart="3dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="18dp"
+                    android:background="#ededed"
+                    >
+                </View>
+
+
+                <TextView
+                    android:id="@+id/padrao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginStart="3dp"
+                    android:text="Rentabilidade:"
+                    android:textColor="#4f996c"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="8"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_below="@+id/padrao"
+                            android:text="Ano(%):"
+                            android:textSize="14sp"
+                            android:layout_marginRight="-11dp"
+                            />
+                        <TextView
+                            android:id="@+id/profitYearID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_below="@+id/padrao"
+                            android:text="12.05"
+                            android:textSize="14sp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_below="@+id/padrao"
+                            android:text="Mes(%):"
+                            android:textSize="14sp"
+                            android:layout_marginRight="-11dp"
+                            />
+                        <TextView
+                            android:id="@+id/profitMonthID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="15%"
+                            android:textSize="14sp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_below="@+id/padrao"
+                            android:text="Dia(%):"
+                            android:textSize="14sp"
+                            android:layout_marginRight="-11dp"
+                            />
+                        <TextView
+                            android:id="@+id/profitDayID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="15"
+                            android:textSize="14sp"
+                            />
+                    </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/action_bar"
+            >
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:title="Órama"
+                app:titleTextColor="#ffffff"
+                android:id="@+id/toolBarDetaisID"
+                app:titleTextAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                />
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#ffaa"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:id="@+id/tituloID"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Western Asset Feeder FIC FIRF Referenciado Selic"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:background="@color/colorPrimary"
+                            android:textColor="#ffffff"
+                            android:padding="5dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/aboutID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Indicado para investidores que buscam retornos consistentes e segurança, pois os títulos que compõem a sua carteira são considerados investimentos de menor risco do mercado."
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:background="@color/colorPrimary"
+                            android:textColor="#ffffff"
+                            android:padding="5dp"
+
+                            />
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+
+
+
+        </android.support.design.widget.AppBarLayout>
+
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>

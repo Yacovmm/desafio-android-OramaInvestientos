@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.yacov.myoramafundsapp.MainActivity">
+    tools:context="com.yacov.myoramafundsapp.activity.MainActivity">
 
 
     <android.support.design.widget.CoordinatorLayout
